@@ -3,8 +3,6 @@ services:
   web:
     build:
       context: ./blog
-    ports:
-      - "8080:8080"
     restart: always
     networks:
       net-pireirik:

@@ -36,7 +36,7 @@ http {
     include /etc/nginx/conf.d/*.conf;
 
     upstream web_server {
-	    server 127.0.0.1:8080;
+	    server 10.172.17.2:8080;
 	    # server 172.16.128.127:8080;
 	    # least_conn;
     }

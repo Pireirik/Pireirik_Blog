@@ -126,6 +126,14 @@ http {
 			alias /usr/share/nginx/Pireirik/media/;
         }
 
+        location ^~ /files/ {
+			alias /usr/share/nginx/Pireirik/files/;
+        }
+
+        location ~* \.(pdf)$ {
+			alias /usr/share/nginx/Pireirik/files/;
+        }
+
         error_page 404 /404.html;
             location = /40x.html {
         }

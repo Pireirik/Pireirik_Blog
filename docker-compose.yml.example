@@ -17,6 +17,7 @@ services:
       - ./pireirik-nginx.conf:/etc/nginx/nginx.conf:ro
       - ./pireirik_com/pireirik.crt:/etc/nginx/certs/server.crt:ro
       - ./pireirik_com/pireirik.key:/etc/nginx/certs/server.key:ro
+      - ./static:/usr/share/nginx/Pireirik:ro
     depends_on:
       - web
     restart: always

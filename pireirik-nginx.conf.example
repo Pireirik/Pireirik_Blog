@@ -102,6 +102,30 @@ http {
             proxy_pass http://request_server/;
         }
 
+        location ^~ /favicon/ {
+			alias /usr/share/nginx/Pireirik/favicon/;
+		}
+
+        location ~* \.(ico)$ {
+			alias /usr/share/nginx/Pireirik/favicon/;
+		}
+
+        location ^~ /images/ {
+			alias /usr/share/nginx/Pireirik/images/;
+        }
+
+        location ~* \.(png|gif|jpg|jpeg)$ {
+			alias /usr/share/nginx/Pireirik/images/;
+		}
+
+        location ^~ /media/ {
+			alias /usr/share/nginx/Pireirik/media/;
+        }
+
+        location ~* \.(mp3)$ {
+			alias /usr/share/nginx/Pireirik/media/;
+        }
+
         error_page 404 /404.html;
             location = /40x.html {
         }

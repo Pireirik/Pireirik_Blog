@@ -110,14 +110,6 @@ http {
 			alias /usr/share/nginx/Pireirik/favicon/;
 		}
 
-        location ^~ /images/ {
-			alias /usr/share/nginx/Pireirik/images/;
-        }
-
-        location ~* \.(png|gif|jpg|jpeg)$ {
-			alias /usr/share/nginx/Pireirik/images/;
-		}
-
         location ^~ /media/ {
 			alias /usr/share/nginx/Pireirik/media/;
         }

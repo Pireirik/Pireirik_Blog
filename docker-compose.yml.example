@@ -4,10 +4,12 @@ services:
     build:
       context: ./blog
     container_name: pireirik-web
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
     restart: always
     networks:
-      net-pireirik:
-        ipv4_address: 10.172.17.2
+      blog_service_net-tars:
+        ipv4_address: 172.25.1.3
 
   nginx:
     image: nginx:stable
@@ -20,15 +22,14 @@ services:
       - ./pireirik_com/pireirik.crt:/etc/nginx/certs/server.crt:ro
       - ./pireirik_com/pireirik.key:/etc/nginx/certs/server.key:ro
       - ./static:/usr/share/nginx/Pireirik:ro
+      - /etc/localtime:/ect/localtime:ro
     depends_on:
       - web
     restart: always
     networks:
-      net-pireirik:
-        ipv4_address: 10.172.17.3
+      blog_service_net-tars:
+        ipv4_address: 172.25.1.2
 
 networks:
-  net-pireirik:
-    ipam:
-      config:
-        - subnet: 10.172.17.0/24
+  blog_service_net-tars:
+    external: true

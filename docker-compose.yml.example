@@ -3,6 +3,7 @@ services:
   web:
     build:
       context: ./blog
+    container_name: pireirik-web
     restart: always
     networks:
       net-pireirik:
@@ -10,6 +11,7 @@ services:
 
   nginx:
     image: nginx:stable
+    container_name: pireirik-nginx
     ports:
       - "80:80"
       - "443:443"

@@ -19,7 +19,7 @@ services:
       - "443:443"
     volumes:
       - ./pireirik-nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./pireirik_com/pireirik.crt:/etc/nginx/certs/server.crt:ro
+      - ./pireirik_com/pireirik_com.crt:/etc/nginx/certs/server.crt:ro
       - ./pireirik_com/pireirik.key:/etc/nginx/certs/server.key:ro
       - ./static:/usr/share/nginx/Pireirik:ro
       - /etc/localtime:/ect/localtime:ro

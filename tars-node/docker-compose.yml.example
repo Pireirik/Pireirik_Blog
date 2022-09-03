@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  node-cpp:
+    image: tarscloud/tars-node:cpp
+    container_name: tars-node-cpp
+    network_mode: "host"
+    restart: always
+    volumes:
+      - /data/tars-node/cpp:/data/tars:rw
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      INET: eth0
+      WEB_HOST: http://127.0.0.1:3000
+    ports:
+      - "9000-9010:9000-9010"
